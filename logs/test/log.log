@@ -1,0 +1,60 @@
+2023-12-20 15:13:28.249 [test]  INFO 19524 [           main] com.example.test.TestApplication         652  : The following profiles are active: dev
+2023-12-20 15:13:28.770 [test]  INFO 19524 [           main] o.s.cloud.context.scope.GenericScope     295  : BeanFactory id=7ad80820-9d6d-3dbd-babf-fcd16f208d0c
+2023-12-20 15:13:29.131 [test]  INFO 19524 [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  108  : Tomcat initialized with port(s): 20694 (http)
+2023-12-20 15:13:29.138 [test]  INFO 19524 [           main] o.a.coyote.http11.Http11NioProtocol      173  : Initializing ProtocolHandler ["http-nio-20694"]
+2023-12-20 15:13:29.139 [test]  INFO 19524 [           main] o.apache.catalina.core.StandardService   173  : Starting service [Tomcat]
+2023-12-20 15:13:29.139 [test]  INFO 19524 [           main] org.apache.catalina.core.StandardEngine  173  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-12-20 15:13:29.263 [test]  INFO 19524 [           main] o.a.c.c.C.[Tomcat].[localhost].[/test]   173  : Initializing Spring embedded WebApplicationContext
+2023-12-20 15:13:29.263 [test]  INFO 19524 [           main] w.s.c.ServletWebServerApplicationContext 285  : Root WebApplicationContext: initialization completed in 1002 ms
+2023-12-20 15:13:29.413 [test]  INFO 19524 [           main] c.a.d.s.b.a.DruidDataSourceAutoConfigure 56   : Init DruidDataSource
+2023-12-20 15:13:39.056 [test]  INFO 19524 [           main] com.alibaba.druid.pool.DruidDataSource   983  : {dataSource-1,springCloudTest} inited
+2023-12-20 15:13:39.696 [test]  WARN 19524 [           main] c.n.c.sources.URLConfigurationSource     121  : No URLs will be polled as dynamic configuration sources.
+2023-12-20 15:13:39.696 [test]  INFO 19524 [           main] c.n.c.sources.URLConfigurationSource     122  : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-12-20 15:13:39.700 [test]  WARN 19524 [           main] c.n.c.sources.URLConfigurationSource     121  : No URLs will be polled as dynamic configuration sources.
+2023-12-20 15:13:39.700 [test]  INFO 19524 [           main] c.n.c.sources.URLConfigurationSource     122  : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-12-20 15:13:39.827 [test]  INFO 19524 [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  181  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-12-20 15:13:40.305 [test]  INFO 19524 [           main] o.s.s.c.ThreadPoolTaskScheduler          181  : Initializing ExecutorService 'Nacso-Watch-Task-Scheduler'
+2023-12-20 15:13:41.083 [test]  INFO 19524 [           main] o.a.coyote.http11.Http11NioProtocol      173  : Starting ProtocolHandler ["http-nio-20694"]
+2023-12-20 15:13:41.106 [test]  INFO 19524 [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  220  : Tomcat started on port(s): 20694 (http) with context path '/test'
+2023-12-20 15:13:41.238 [test]  INFO 19524 [           main] c.a.c.n.registry.NacosServiceRegistry    65   : nacos registry, dev1 test 192.168.52.194:20694 register finished
+2023-12-20 15:13:41.569 [test]  INFO 19524 [           main] com.example.test.TestApplication         61   : Started TestApplication in 14.902 seconds (JVM running for 15.878)
+2023-12-20 15:35:25.691 [test]  INFO 11452 [           main] com.example.test.TestApplication         652  : The following profiles are active: dev
+2023-12-20 15:35:26.121 [test]  INFO 11452 [           main] o.s.cloud.context.scope.GenericScope     295  : BeanFactory id=7ad80820-9d6d-3dbd-babf-fcd16f208d0c
+2023-12-20 15:35:26.434 [test]  INFO 11452 [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  108  : Tomcat initialized with port(s): 20694 (http)
+2023-12-20 15:35:26.440 [test]  INFO 11452 [           main] o.a.coyote.http11.Http11NioProtocol      173  : Initializing ProtocolHandler ["http-nio-20694"]
+2023-12-20 15:35:26.441 [test]  INFO 11452 [           main] o.apache.catalina.core.StandardService   173  : Starting service [Tomcat]
+2023-12-20 15:35:26.441 [test]  INFO 11452 [           main] org.apache.catalina.core.StandardEngine  173  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-12-20 15:35:26.545 [test]  INFO 11452 [           main] o.a.c.c.C.[Tomcat].[localhost].[/test]   173  : Initializing Spring embedded WebApplicationContext
+2023-12-20 15:35:26.545 [test]  INFO 11452 [           main] w.s.c.ServletWebServerApplicationContext 285  : Root WebApplicationContext: initialization completed in 844 ms
+2023-12-20 15:35:26.674 [test]  INFO 11452 [           main] c.a.d.s.b.a.DruidDataSourceAutoConfigure 56   : Init DruidDataSource
+2023-12-20 15:35:36.305 [test]  INFO 11452 [           main] com.alibaba.druid.pool.DruidDataSource   983  : {dataSource-1,springCloudTest} inited
+2023-12-20 15:35:37.070 [test]  WARN 11452 [           main] c.n.c.sources.URLConfigurationSource     121  : No URLs will be polled as dynamic configuration sources.
+2023-12-20 15:35:37.070 [test]  INFO 11452 [           main] c.n.c.sources.URLConfigurationSource     122  : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-12-20 15:35:37.072 [test]  WARN 11452 [           main] c.n.c.sources.URLConfigurationSource     121  : No URLs will be polled as dynamic configuration sources.
+2023-12-20 15:35:37.072 [test]  INFO 11452 [           main] c.n.c.sources.URLConfigurationSource     122  : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-12-20 15:35:37.176 [test]  INFO 11452 [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  181  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-12-20 15:35:37.634 [test]  INFO 11452 [           main] o.s.s.c.ThreadPoolTaskScheduler          181  : Initializing ExecutorService 'Nacso-Watch-Task-Scheduler'
+2023-12-20 15:35:38.437 [test]  INFO 11452 [           main] o.a.coyote.http11.Http11NioProtocol      173  : Starting ProtocolHandler ["http-nio-20694"]
+2023-12-20 15:35:38.452 [test]  INFO 11452 [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  220  : Tomcat started on port(s): 20694 (http) with context path '/test'
+2023-12-20 15:35:38.584 [test]  INFO 11452 [           main] c.a.c.n.registry.NacosServiceRegistry    65   : nacos registry, dev1 test 192.168.52.194:20694 register finished
+2023-12-20 15:35:38.935 [test]  INFO 11452 [           main] com.example.test.TestApplication         61   : Started TestApplication in 14.497 seconds (JVM running for 15.315)
+2023-12-20 15:35:59.143 [test]  INFO 11452 [io-20694-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/test]   173  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-20 15:35:59.143 [test]  INFO 11452 [io-20694-exec-1] o.s.web.servlet.DispatcherServlet        525  : Initializing Servlet 'dispatcherServlet'
+2023-12-20 15:35:59.151 [test]  INFO 11452 [io-20694-exec-1] o.s.web.servlet.DispatcherServlet        547  : Completed initialization in 8 ms
+2023-12-20 15:35:59.160 [test]  INFO 11452 [io-20694-exec-1] c.e.t.interceptor.ExceptionInterceptor   24   : 111111111111111111111111111
+2023-12-20 15:35:59.176 [test]  INFO 11452 [io-20694-exec-1] com.example.test.aop.LogRequestAop       51   : <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2023-12-20 15:35:59.177 [test]  INFO 11452 [io-20694-exec-1] com.example.test.aop.LogRequestAop       52   : 请求地址：127.0.0.1
+2023-12-20 15:35:59.177 [test]  INFO 11452 [io-20694-exec-1] com.example.test.aop.LogRequestAop       53   : 接口：/test/user/findAllUser
+2023-12-20 15:35:59.177 [test]  INFO 11452 [io-20694-exec-1] com.example.test.aop.LogRequestAop       54   : 接口名称：<>
+2023-12-20 15:35:59.178 [test]  INFO 11452 [io-20694-exec-1] com.example.test.aop.LogRequestAop       55   : 入参：[]
+2023-12-20 15:35:59.178 [test]  INFO 11452 [io-20694-exec-1] com.example.test.aop.LogRequestAop       56   : >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2023-12-20 15:35:59.183 [test]  INFO 11452 [io-20694-exec-1] c.e.test.controller.UserController       52   : 66666666
+2023-12-20 15:35:59.257 [test] DEBUG 11452 [io-20694-exec-1] c.e.test.mapper.UserMapper.selectList    137  : ==>  Preparing: SELECT name,age FROM user WHERE (age = ? AND age BETWEEN ? AND ? OR age = ? AND age = ? AND age = ? OR age = ?)
+2023-12-20 15:35:59.275 [test] DEBUG 11452 [io-20694-exec-1] c.e.test.mapper.UserMapper.selectList    137  : ==> Parameters: 666(Integer), 1(Integer), 600(Integer), 666(Integer), 666(Integer), 666(Integer), 666(Integer)
+2023-12-20 15:35:59.610 [test] DEBUG 11452 [io-20694-exec-1] c.e.test.mapper.UserMapper.selectList    137  : <==      Total: 0
+2023-12-20 15:35:59.613 [test] DEBUG 11452 [io-20694-exec-1] c.e.test.mapper.UserMapper.findAllUser   137  : ==>  Preparing: select * from user limit 10
+2023-12-20 15:35:59.613 [test] DEBUG 11452 [io-20694-exec-1] c.e.test.mapper.UserMapper.findAllUser   137  : ==> Parameters: 
+2023-12-20 15:35:59.669 [test] DEBUG 11452 [io-20694-exec-1] c.e.test.mapper.UserMapper.findAllUser   137  : <==      Total: 10
+2023-12-20 15:35:59.670 [test]  INFO 11452 [io-20694-exec-1] com.example.test.aop.LogRequestAop       59   : 接口：/test/user/findAllUser耗时：495毫秒
+2023-12-20 15:35:59.727 [test]  INFO 11452 [io-20694-exec-1] c.e.t.interceptor.ExceptionInterceptor   30   : 222222222222222222222222222
+2023-12-20 15:35:59.727 [test]  INFO 11452 [io-20694-exec-1] c.e.t.interceptor.ExceptionInterceptor   36   : 333333333333333333333333333333

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ scan:         logback配置文件一旦发生变化，logback支持重新加载文件
+ scanPeriod:   60s加载一次
+ debug:        应用启动时在控制台上打印出 context上下文的加载情况
+ -->
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+    <!-- spring上下文的属性配置 -->
+    <springProperty scope="context" name="APP_NAME" source="spring.application.name"/>
+    <springProperty scope="context" name="APP_PORT" source="server.port"/>
+
+    <!-- 彩色日志依赖的渲染类 -->
+    <conversionRule conversionWord="clr"
+                    converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+    <!-- 异常日志渲染类 -->
+    <conversionRule conversionWord="wex"
+                    converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
+    <conversionRule conversionWord="wEx"
+                    converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
+
+    <!-- 彩色日志格式
+        时间:            %d{yyyy-MM-dd HH:mm:ss.SSS}
+        应用名称:         ${APP_NAME:-APP}
+        日志级别:         %5p
+        进程ID:          ${PID:- }
+        线程名称:         %15.15t
+        触发日志类方法:    %-40.40logger{39}
+        代码行号:         %-4line
+        日志内容:         %m
+        换行符:           %n
+        异常:            %wEx
+    -->
+    <property name="CONSOLE_LOG_PATTERN"
+              value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} [${APP_NAME:-APP} %clr(${APP_PORT:-}){blue}] %clr(${PID:- }){magenta} %clr(%5p) %clr([%15.15t]){faint} %clr(%-40.40logger{39} %-4line){cyan} %clr(:){faint} %m%n%wEx"/>
+
+    <!-- 文件日志格式 -->
+    <property name="FILE_LOG_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [${APP_NAME:-APP}] %5p ${PID:- } [%15.15t] %-40.40logger{39} %-4line : %m%n%wEx"/>
+
+
+    <!-- 定义日志文件存储位置和文件名 -->
+    <property name="LOG_FILE" value="logs/test/log.log"/>
+
+    <!-- 定义日志文件归档格式:
+         log.2023-06-07.0.gz
+         log.2023-06-07.1.gz
+         log.2023-06-07.2.gz
+     -->
+    <property name="ROLLINGPOLICY_FILE_NAME_PATTERN" value="${LOG_FILE}.%d{yyyy-MM-dd}.%i.gz"/>
+
+    <!-- 单个日志文件大小 -->
+    <property name="ROLLINGPOLICY_MAX_FILE_SIZE" value="20MB"/>
+
+    <!-- 归档文件占用磁盘总大小,超过后会根据cleanHistoryOnStart实行，决定是否删除 -->
+    <property name="ROLLINGPOLICY_TOTAL_SIZE_CAP" value="50GB"/>
+
+    <!-- 超过最大磁盘限制后是否删除归档文件 -->
+    <property name="ROLLINGPOLICY_CLEAN_HISTORY_ON_START" value="true"/>
+
+    <!-- 保留的历史归档日志文件个数 -->
+    <property name="ROLLINGPOLICY_MAX_HISTORY" value="30"/>
+
+
+    <!-- 控制台输出 -->
+    <appender name="CONSOLE_OUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 文件输出: RollingFileAppender 滚动日志输出-->
+    <appender name="FILE_OUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <file>${LOG_FILE}</file>
+        <!-- 滚动日志策略: SizeAndTimeBasedRollingPolicy 根据文件大小和时间进行分割归档-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${ROLLINGPOLICY_FILE_NAME_PATTERN}</fileNamePattern>
+            <cleanHistoryOnStart>${ROLLINGPOLICY_CLEAN_HISTORY_ON_START}</cleanHistoryOnStart>
+            <maxFileSize>${ROLLINGPOLICY_MAX_FILE_SIZE}</maxFileSize>
+            <totalSizeCap>${ROLLINGPOLICY_TOTAL_SIZE_CAP}</totalSizeCap>
+            <maxHistory>${ROLLINGPOLICY_MAX_HISTORY}</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+
+    <!-- AsyncAppender 在于高并发下，加如日志队列缓存，减少写磁盘日志的IO次数。可以根据实际情况决定是否使用 -->
+
+    <appender name="ASYNC_CONSOLE_APPENDER" class="ch.qos.logback.classic.AsyncAppender">
+        <!-- 如果设置20,表示队列的80%已满,则会丢弃TRACT、DEBUG、INFO级别的日志,设置0则不会丢弃 -->
+        <discardingThreshold>0</discardingThreshold>
+        <!-- 更改默认的队列的深度,该值会影响性能.默认值为256 -->
+        <queueSize>1024</queueSize>
+        <!-- 队列满了不阻塞调用者-->
+        <neverBlock>false</neverBlock>
+        <!-- 是否记录调用者额外的信息(比如记录后，可以打印行号)会造成性能损耗，默认false只记录线程名字和mdc信息 -->
+        <includeCallerData>true</includeCallerData>
+        <!-- 实际输出日志appender,最多只能添加一个 -->
+        <appender-ref ref ="CONSOLE_OUT"/>
+    </appender>
+
+    <appender name="ASYNC_FILE_APPENDER" class="ch.qos.logback.classic.AsyncAppender">
+        <!-- 如果设置20,表示队列的80%已满,则会丢弃TRACT、DEBUG、INFO级别的日志,设置0则不会丢弃 -->
+        <discardingThreshold>0</discardingThreshold>
+        <!-- 更改默认的队列的深度,该值会影响性能.默认值为256 -->
+        <queueSize>1024</queueSize>
+        <!-- 队列满了不阻塞调用者-->
+        <neverBlock>false</neverBlock>
+        <!-- 实际输出日志appender,最多只能添加一个 -->
+        <appender-ref ref ="FILE_OUT"/>
+    </appender>
+
+    <!--mybatis日志 mapper包所在路径-->
+    <logger name="com.example.test.mapper" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE_OUT"/>
+        <appender-ref ref="FILE_OUT"/>
+    </logger>
+
+    <!-- 默认的日志输出级别 -->
+    <root level="info">
+        <!--选择合适的日志记录器，可以是多个，会同时写入。一般是一个console，一个file，可以选择异步和同步-->
+        <appender-ref ref="CONSOLE_OUT"/>
+        <appender-ref ref="FILE_OUT"/>
+    </root>
+</configuration>
