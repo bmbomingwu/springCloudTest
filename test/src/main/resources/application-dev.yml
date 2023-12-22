@@ -1,5 +1,5 @@
 server:
-  port: 20694
+  port: 8179
   servlet:
     context-path: /test
 
@@ -11,7 +11,7 @@ spring:
       discovery:
         server-addr: 101.200.181.10:8848
         group: dev1
-        namespace: 8dfdcc4a-26e3-4514-b1ad-4f3ac3e939d4
+        namespace: public #8dfdcc4a-26e3-4514-b1ad-4f3ac3e939d4
         username: nacos
         password: nacos
   datasource:
@@ -20,7 +20,7 @@ spring:
       name: springCloudTest
       url: jdbc:mysql://101.200.181.10:3306/springCloudTest?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&useSSL=false
       username: root
-      password: 123456
+      password: BuGu123456!
       initial-size: 20
       max-active: 200
       min-idle: 8

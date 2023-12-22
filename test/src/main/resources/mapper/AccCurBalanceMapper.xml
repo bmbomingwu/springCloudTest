@@ -4,6 +4,6 @@
 
 
     <select id="findAllUser" resultType="com.example.common.model.User">
-        select * from user limit 10
+        select * from user
     </select>
 </mapper>

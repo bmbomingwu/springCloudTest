@@ -40,7 +40,7 @@
 
 
     <!-- 定义日志文件存储位置和文件名 -->
-    <property name="LOG_FILE" value="logs/test/log.log"/>
+    <property name="LOG_FILE" value="logs/gateway/log.log"/>
 
     <!-- 定义日志文件归档格式:
          log.2023-06-07.0.gz

@@ -2,7 +2,7 @@ package com.example.test.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.example.common.model.User;
-import com.example.test.exception.ServiceException;
+import com.example.common.exception.ServiceException;
 import com.example.test.mapper.UserMapper;
 import com.example.test.model.dto.UserDto;
 import com.example.test.service.UserService;
@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
                 .eq(User::getAge,666)
                 .or()
                 .eq(User::getAge,666);
-        List<User> users = userMapper.selectList(between);
+        //List<User> users = userMapper.selectList(between);
       //  System.out.println(users);
         return userMapper.findAllUser();
     }

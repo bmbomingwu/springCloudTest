@@ -2,7 +2,7 @@ package com.example.test.controller;
 
 import com.example.common.http.ResponseResult;
 import com.example.common.model.User;
-import com.example.test.annotation.LogRequest;
+import com.example.common.annotation.LogRequest;
 import com.example.test.model.dto.UserDto;
 import com.example.test.service.UserService;
 import lombok.extern.slf4j.Slf4j;
