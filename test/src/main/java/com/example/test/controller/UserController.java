@@ -6,6 +6,8 @@ import com.example.common.annotation.LogRequest;
 import com.example.test.model.dto.UserDto;
 import com.example.test.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -23,6 +25,9 @@ import java.util.List;
 @RequestMapping("/user")
 @Slf4j
 public class UserController {
+
+
+
 
     public static void main(String[] args) throws InterruptedException {
         LinkedList<String> strings = new LinkedList<>();
